@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminDashobardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,12 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth','verified'])->name('dashboard');
+
+Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
+    Route::group(['middleware'=>'auth'],function(){
+        Route::get('/',[AdminDashobardController::class,'index'])->name('index');
+    });
+
+});
 
 require __DIR__.'/auth.php';
