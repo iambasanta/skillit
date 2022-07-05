@@ -30,7 +30,7 @@
                         <div class="mt-4">
                             <x-label for="date" :value="__('Date')" />
 
-                            <x-input id="date" class="block w-full mt-1" type="date" name="date" required value="{{ $session->date }}" required />
+                            <x-datepicker name="date" value="{{ $session->date }}"/>
 
                             <x-error name="date" />
                         </div>
@@ -39,7 +39,7 @@
                         <div class="mt-4">
                             <x-label for="time" :value="__('Time')" />
 
-                            <x-input id="time" class="block w-full mt-1" type="text" name="time" required value="{{ $session->time }}" required />
+                            <x-timepicker name="time" value="{{ $session->time }}"/>
 
                             <x-error name="time" />
                         </div>
