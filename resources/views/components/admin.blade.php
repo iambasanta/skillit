@@ -24,11 +24,11 @@
                     <p class="font-bold text-gray-500 text-xs tracking-wider uppercase pt-2">Sessions</p>
                     <ul>
                         <li>
-                            <a href="" class="font-semibold text-gray-600 hover:text-blue-600">All Sessions</a>
+                            <a href="{{ route('admin.sessions.index') }}" class="font-semibold text-gray-600 hover:text-blue-600">All Sessions</a>
                         </li>
 
                         <li>
-                            <a href="" class="font-semibold text-gray-600 hover:text-blue-600">Add New</a>
+                            <a href="{{ route('admin.sessions.create') }}" class="font-semibold text-gray-600 hover:text-blue-600">Add New</a>
                         </li>
                     </ul>
                 </li>

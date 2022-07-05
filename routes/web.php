@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashobardController;
+use App\Http\Controllers\Admin\SessionController;
 use App\Http\Controllers\Admin\WorkshopController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/workshops/{workshop}/edit', [WorkshopController::class, 'edit'])->name('workshops.edit');
         Route::patch('/workshops/{workshop}/edit', [WorkshopController::class, 'update'])->name('workshops.update');
         Route::delete('/workshops/{workshop}/delete', [WorkshopController::class, 'destroy'])->name('workshops.destroy');
+
+        Route::get('/sessions', [SessionController::class, 'index'])->name('sessions.index');
+        Route::get('/sessions/create', [SessionController::class, 'create'])->name('sessions.create');
+        Route::post('/sessions', [SessionController::class, 'store'])->name('sessions.store');
+        Route::get('/sessions/{session}/edit', [SessionController::class, 'edit'])->name('sessions.edit');
+        Route::patch('/sessions/{session}/edit', [SessionController::class, 'update'])->name('sessions.update');
+        Route::delete('/sessions/{session}/delete', [SessionController::class, 'destroy'])->name('sessions.destroy');
     });
 });
 
