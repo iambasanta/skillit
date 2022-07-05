@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => ['auth','can:admin']], function () {
         Route::get('/', [AdminDashobardController::class, 'index'])->name('index');
 
         Route::get('/workshops', [WorkshopController::class, 'index'])->name('workshops.index');

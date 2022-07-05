@@ -34,6 +34,13 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <!-- Admin Dashboard -->
+                        @can('admin')
+                        <x-dropdown-link :href="route('admin.index')">
+                            {{ __('Dashboard') }}
+                        </x-dropdown-link>
+                        @endcan
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -44,6 +51,7 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
+
                     </x-slot>
                 </x-dropdown>
             </div>
