@@ -11,6 +11,8 @@
                             <x-label for="title" :value="__('Title')" />
 
                             <x-input id="title" class="block w-full mt-1" type="text" name="title" :value="old('title')" required autofocus />
+
+                            <x-error name="title" />
                         </div>
 
                         <!-- Facilitator -->
@@ -18,6 +20,8 @@
                             <x-label for="facilitator" :value="__('Facilitator')" />
 
                             <x-input id="facilitator" class="block w-full mt-1" type="text" name="facilitator" :value="old('facilitator')" required />
+
+                            <x-error name="facilitator" />
                         </div>
 
                         <!-- Date -->
@@ -25,6 +29,8 @@
                             <x-label for="date" :value="__('Date')" />
 
                             <x-input id="date" class="block w-full mt-1" type="date" name="date" required :value="old('facilitator')" required />
+
+                            <x-error name="date" />
                         </div>
 
                         <!-- Time -->
@@ -32,6 +38,8 @@
                             <x-label for="time" :value="__('Time')" />
 
                             <x-input id="time" class="block w-full mt-1" type="text" name="time" required :value="old('time')" required />
+
+                            <x-error name="time" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
