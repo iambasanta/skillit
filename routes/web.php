@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminDashobardController;
 use App\Http\Controllers\Admin\SessionController;
 use App\Http\Controllers\Admin\WorkshopController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('user/profile', [ProfileController::class, 'show'])->name('user.profile');
+Route::patch('user/profile', [ProfileController::class, 'update'])->name('user.update');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['middleware' => ['auth', 'can:admin']], function () {
