@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::group(['middleware' => ['auth','can:admin']], function () {
+    Route::group(['middleware' => ['auth', 'can:admin']], function () {
         Route::get('/', [AdminDashobardController::class, 'index'])->name('index');
 
         Route::get('/workshops', [WorkshopController::class, 'index'])->name('workshops.index');
@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/sessions/{session}/edit', [SessionController::class, 'edit'])->name('sessions.edit');
         Route::patch('/sessions/{session}/edit', [SessionController::class, 'update'])->name('sessions.update');
         Route::delete('/sessions/{session}/delete', [SessionController::class, 'destroy'])->name('sessions.destroy');
+
+        Route::get('/registrants', [AdminDashobardController::class, 'savePDF'])->name('registrants.download');
     });
 });
 
