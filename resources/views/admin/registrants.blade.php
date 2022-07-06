@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrants</title>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
         .registrants {
-            font-family: sans-serif;
             border-collapse: collapse;
             width: 100%;
         }
@@ -43,7 +47,7 @@
                 <td>{{ $registrant->id }}</td>
                 <td>{{ $registrant->name }}</td>
                 <td>{{ $registrant->email }}</td>
-                <td>{{ $registrant->college }}</td>
+                <td>{{ $registrant->institute }}</td>
                 <td>{{ $registrant->faculty }}</td>
                 <td></td>
             </tr>
