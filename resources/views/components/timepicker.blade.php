@@ -6,7 +6,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
     </span>
-    <input id="timepicker" type="text" {{ $attributes }} name="{{ $name }}" class="w-full rounded-r-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+    <input id="timepicker" type="text" {{ $attributes }} name="{{ $name }}" class="w-full rounded-r-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
 </div>
 
 @push('styles')

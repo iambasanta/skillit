@@ -11,6 +11,7 @@ class Session extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'facilitator',
         'date',
         'time'

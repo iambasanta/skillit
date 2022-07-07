@@ -17,6 +17,15 @@
                             <x-error name="title" />
                         </div>
 
+                        <!-- Workshop Description -->
+                        <div class="mt-4">
+                            <x-label for="description" :value="__('Description')" />
+                            
+                            <x-rich-text :value="$workshop->description"/>
+
+                            <x-error name="facilitator" />
+                        </div>
+
                         <!-- Facilitator -->
                         <div class="mt-4">
                             <x-label for="facilitator" :value="__('Facilitator')" />

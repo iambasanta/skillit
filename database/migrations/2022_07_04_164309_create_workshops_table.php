@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('facilitator');
+            $table->text('description');
             $table->string('date');
             $table->string('time');
             $table->timestamps();

@@ -25,6 +25,7 @@ class StoreWorkshopRequest extends FormRequest
     {
         return [
             'title' => ['required'],
+            'description' => ['required'],
             'facilitator' => ['required'],
             'date' => ['required','date_format:Y-m-d'],
             'time' => ['required'],
