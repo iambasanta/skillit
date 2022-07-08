@@ -8,7 +8,7 @@ use App\Http\Requests\Session\UpdateSessionRequest;
 use App\Models\Session;
 use Illuminate\Http\Request;
 
-class SessionController extends Controller
+class AdminSessionController extends Controller
 {
     public function index()
     {

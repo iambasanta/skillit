@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashobardController;
-use App\Http\Controllers\Admin\SessionController;
-use App\Http\Controllers\Admin\WorkshopController;
+use App\Http\Controllers\Admin\AdminSessionController;
+use App\Http\Controllers\Admin\AdminWorkshopController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,19 +32,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['middleware' => ['auth', 'can:admin']], function () {
         Route::get('/', [AdminDashobardController::class, 'index'])->name('index');
 
-        Route::get('/workshops', [WorkshopController::class, 'index'])->name('workshops.index');
-        Route::get('/workshops/create', [WorkshopController::class, 'create'])->name('workshops.create');
-        Route::post('/workshops', [WorkshopController::class, 'store'])->name('workshops.store');
-        Route::get('/workshops/{workshop}/edit', [WorkshopController::class, 'edit'])->name('workshops.edit');
-        Route::patch('/workshops/{workshop}/edit', [WorkshopController::class, 'update'])->name('workshops.update');
-        Route::delete('/workshops/{workshop}/delete', [WorkshopController::class, 'destroy'])->name('workshops.destroy');
+        Route::get('/workshops', [AdminWorkshopController::class, 'index'])->name('workshops.index');
+        Route::get('/workshops/create', [AdminWorkshopController::class, 'create'])->name('workshops.create');
+        Route::post('/workshops', [AdminWorkshopController::class, 'store'])->name('workshops.store');
+        Route::get('/workshops/{workshop}/edit', [AdminWorkshopController::class, 'edit'])->name('workshops.edit');
+        Route::patch('/workshops/{workshop}/edit', [AdminWorkshopController::class, 'update'])->name('workshops.update');
+        Route::delete('/workshops/{workshop}/delete', [AdminWorkshopController::class, 'destroy'])->name('workshops.destroy');
 
-        Route::get('/sessions', [SessionController::class, 'index'])->name('sessions.index');
-        Route::get('/sessions/create', [SessionController::class, 'create'])->name('sessions.create');
-        Route::post('/sessions', [SessionController::class, 'store'])->name('sessions.store');
-        Route::get('/sessions/{session}/edit', [SessionController::class, 'edit'])->name('sessions.edit');
-        Route::patch('/sessions/{session}/edit', [SessionController::class, 'update'])->name('sessions.update');
-        Route::delete('/sessions/{session}/delete', [SessionController::class, 'destroy'])->name('sessions.destroy');
+        Route::get('/sessions', [AdminSessionController::class, 'index'])->name('sessions.index');
+        Route::get('/sessions/create', [AdminSessionController::class, 'create'])->name('sessions.create');
+        Route::post('/sessions', [AdminSessionController::class, 'store'])->name('sessions.store');
+        Route::get('/sessions/{session}/edit', [AdminSessionController::class, 'edit'])->name('sessions.edit');
+        Route::patch('/sessions/{session}/edit', [AdminSessionController::class, 'update'])->name('sessions.update');
+        Route::delete('/sessions/{session}/delete', [AdminSessionController::class, 'destroy'])->name('sessions.destroy');
 
         Route::get('/registrants', [AdminDashobardController::class, 'savePDF'])->name('registrants.download');
     });

@@ -8,7 +8,7 @@ use App\Http\Requests\Workshop\UpdateWorkshopRequest;
 use App\Models\Workshop;
 use Illuminate\Http\Request;
 
-class WorkshopController extends Controller
+class AdminWorkshopController extends Controller
 {
     public function index()
     {
