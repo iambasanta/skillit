@@ -32,6 +32,6 @@ class ProfileController extends Controller
             'level' => $request->level,
         ]);
 
-        return redirect()->back()->with('success','Profile updated successfylly!');
+        return redirect()->back()->with('success','Profile updated successfully!');
     }
 }
