@@ -17,7 +17,12 @@ class SessionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => fake()->sentence(),
+            'description'=>fake()->sentences(),
+            'facilitator'=>fake()->name(),
+            'seats' => rand(10,25),
+            'date'=>fake()->date(),
+            'time'=>fake()->time()
         ];
     }
 }
