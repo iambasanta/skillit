@@ -20,14 +20,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/home', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
     Route::get('/workshops', [WorkshopController::class, 'index'])->name('workshops');
 
     Route::get('/sessions', [SessionController::class, 'index'])->name('sessions');
