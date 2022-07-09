@@ -15,6 +15,7 @@ class Workshop extends Model
         'title',
         'description',
         'facilitator',
+        'seats',
         'date',
         'time'
     ];

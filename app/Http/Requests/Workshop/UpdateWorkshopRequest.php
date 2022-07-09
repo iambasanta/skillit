@@ -27,6 +27,7 @@ class UpdateWorkshopRequest extends FormRequest
             'title' => ['required'],
             'description' => ['required'],
             'facilitator' => ['required'],
+            'seats' => ['required','integer'],
             'date' => ['required','date_format:Y-m-d'],
             'time' => ['required'],
         ];

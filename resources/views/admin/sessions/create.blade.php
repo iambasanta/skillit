@@ -32,6 +32,15 @@
 
                             <x-error name="facilitator" />
                         </div>
+                            
+                        <!-- Seats -->
+                        <div class="mt-4">
+                            <x-label for="seats" :value="__('Seats')" />
+
+                            <x-input id="seats" class="block w-full mt-1" type="number" name="seats" :value="old('seats')" required />
+
+                            <x-error name="seats" />
+                        </div>
 
                         <!-- Date -->
                         <div class="mt-4">
