@@ -48,10 +48,16 @@
                                 </div>
 
                                 <div>
-                                    <a href=""
-                                        class="text-sm font-semibold bg-orange-background hover:bg-orange-500 rounded-full py-2 px-3 text-white">
-                                        Add to my list
-                                    </a>
+                                    <form action="{{ route('sessions.register',$session->id) }}" method="POST">
+                                        @csrf
+
+                                        @method('PATCH')
+
+                                        <button class="px-3 py-2 text-sm font-semibold text-white rounded-full bg-orange-background hover:bg-orange-500">
+                                            Register
+                                        </button>
+                                    </form>
+
                                 </div>
                             </footer>
                         </div>
@@ -63,4 +69,6 @@
 
         </section>
     </div>
+
+    <x-notify/>
 </x-app-layout>

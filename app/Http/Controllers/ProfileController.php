@@ -15,12 +15,11 @@ class ProfileController extends Controller
 
     public function update(UpdateProfileRequest $request)
     {
-        if($request->password){
-            
+        if ($request->password) {
+
             auth()->user()->update([
                 'password' => bcrypt($request->password)
             ]);
-
         }
 
         auth()->user()->update([
@@ -32,6 +31,26 @@ class ProfileController extends Controller
             'level' => $request->level,
         ]);
 
-        return redirect()->back()->with('success','Profile updated successfully!');
+        return redirect()->back()->with('success', 'Profile updated successfully!');
+    }
+
+    public function registerForWorkshop($workshopID)
+    {
+
+        auth()->user()->update([
+            'workshop_id' => $workshopID
+        ]);
+
+        return redirect()->back()->with('success', 'You are registered successfully!');
+    }
+
+    public function registerForSession($sessionID)
+    {
+
+        auth()->user()->update([
+            'session_id' => $sessionID
+        ]);
+
+        return redirect()->back()->with('success', 'You are registered successfully!');
     }
 }

@@ -3,12 +3,12 @@
         <section class="px-6 py-8">
 
             <header>
-                <div class="max-w-4xl mx-auto lg:mt-20 text-center">
+                <div class="max-w-4xl mx-auto text-center lg:mt-20">
                     <div class="max-w-xl mx-auto">
                         <h1 class="text-4xl font-bold">
                             Workshops
                         </h1>
-                        <p class="text-sm mt-10 text-gray-500">
+                        <p class="mt-10 text-sm text-gray-500">
                             Please select the workshops you want to take part in
                         </p>
                     </div>
@@ -16,14 +16,13 @@
                 </div>
             </header>
 
-            <main class="max-w-6xl mx-auto lg:mt-20 mt-10">
+            <main class="max-w-6xl mx-auto mt-10 lg:mt-20">
                 <div class="lg:grid lg:grid-cols-2 ">
                     @foreach($workshops as $workshop)
-                    <article
-                        class="m-6 bg-white rounded-xl ">
+                    <article class="m-6 bg-white rounded-xl ">
 
                         <header>
-                            <div class="bg-blue-background text-white rounded-t-xl p-6">
+                            <div class="p-6 text-white bg-blue-background rounded-t-xl">
                                 <h3 class="text-2xl font-semibold">
                                     {{ $workshop->title }}
                                 </h3>
@@ -31,7 +30,7 @@
                             </div>
                         </header>
 
-                        <div class="py-6 px-5 space-y-6">
+                        <div class="px-5 py-6 space-y-6">
 
                             <div class="">
                                 <h4 class="font-bold text-gray-700"> Speaker : {{ $workshop->facilitator }}</h4>
@@ -41,17 +40,23 @@
                                 {!! $workshop->description !!}
                             </div>
 
-                            <footer class="flex justify-between items-center">
+                            <footer class="flex items-center justify-between">
                                 <div class="text-sm">
                                     <span class="font-semibold uppercase">{{ $workshop->time }},</span>
                                     {{ $workshop->date }}
                                 </div>
 
                                 <div>
-                                    <a href=""
-                                        class="text-sm font-semibold bg-blue-background hover:bg-sky-500 rounded-full py-2 px-3 text-white">
-                                        Add to my list
-                                    </a>
+                                    <form action="{{ route('workshops.register',$workshop->id) }}" method="POST">
+                                        @csrf
+
+                                        @method('PATCH')
+
+                                        <button class="px-3 py-2 text-sm font-semibold text-white rounded-full bg-blue-background hover:bg-sky-500">
+                                            Register
+                                        </button>
+                                    </form>
+
                                 </div>
                             </footer>
                         </div>
@@ -63,4 +68,6 @@
 
         </section>
     </div>
+
+    <x-notify />
 </x-app-layout>

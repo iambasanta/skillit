@@ -27,10 +27,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::group(['middleware'=>['auth','verified']],function(){
-    Route::get('/workshops',[WorkshopController::class,'index'])->name('workshops');
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/workshops', [WorkshopController::class, 'index'])->name('workshops');
 
-    Route::get('/sessions',[SessionController::class,'index'])->name('sessions');
+    Route::get('/sessions', [SessionController::class, 'index'])->name('sessions');
+
+    Route::patch('/workshops/{workshop}/register', [ProfileController::class, 'registerForWorkshop'])->name('workshops.register');
+
+    Route::patch('/sessions/{session}/register', [ProfileController::class, 'registerForSession'])->name('sessions.register');
 });
 
 
