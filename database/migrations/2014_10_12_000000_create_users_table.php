@@ -21,10 +21,10 @@ return new class extends Migration
             $table->foreignIdFor(Session::class)->nullable();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            $table->string('institute')->nullable();
-            $table->string('faculty')->nullable();
-            $table->string('level')->nullable();
+            $table->string('phone');
+            $table->string('institute');
+            $table->string('faculty');
+            $table->string('level');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

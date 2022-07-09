@@ -26,6 +26,34 @@
                 <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <!-- Phone Number -->
+            <div class="mt-4">
+                <x-label for="phone" :value="__('Phone Number')" />
+
+                <x-input id="phone" class="block w-full mt-1" type="text" name="phone" :value="old('phone')" required />
+            </div>
+
+            <!-- Institute/ College -->
+            <div class="mt-4">
+                <x-label for="institute" :value="__('Institute/ College')" />
+
+                <x-input id="institute" class="block w-full mt-1" type="text" name="institute" :value="old('institute')" required />
+            </div>
+
+            <!-- Faculty -->
+            <div class="mt-4">
+                <x-label for="faculty" :value="__('Faculty')" />
+
+                <x-input id="faculty" class="block w-full mt-1" type="text" name="faculty" :value="old('faculty')" required />
+            </div>
+
+            <!-- Year/ Semester -->
+            <div class="mt-4">
+                <x-label for="level" :value="__('Year/ Semester')" />
+
+                <x-input id="level" class="block w-full mt-1" type="text" name="level" :value="old('level')" required />
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
