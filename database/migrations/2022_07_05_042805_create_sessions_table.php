@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('seats');
             $table->date('date');
             $table->time('time');
+            $table->integer('duration');
             $table->timestamps();
         });
     }

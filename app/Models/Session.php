@@ -17,7 +17,8 @@ class Session extends Model
         'facilitator',
         'seats',
         'date',
-        'time'
+        'time',
+        'duration',
     ];
 
     public function Date() : Attribute{

@@ -28,6 +28,10 @@
                                     </th>
 
                                     <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                        Duration
+                                    </th>
+
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                         Action
                                     </th>
                                 </tr>
@@ -63,6 +67,12 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
                                             {{ $session->time }}
+                                        </span>
+                                    </td>
+
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
+                                            {{ $session->duration }} Days
                                         </span>
                                     </td>
 

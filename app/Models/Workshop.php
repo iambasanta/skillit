@@ -17,7 +17,8 @@ class Workshop extends Model
         'facilitator',
         'seats',
         'date',
-        'time'
+        'time',
+        'duration',
     ];
 
     public function Date() : Attribute{

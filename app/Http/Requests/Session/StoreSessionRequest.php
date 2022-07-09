@@ -30,6 +30,7 @@ class StoreSessionRequest extends FormRequest
             'seats' => ['required','integer'],
             'date' => ['required','date_format:Y-m-d'],
             'time' => ['required'],
+            'duration' => ['required','integer'],
         ];
     }
 }

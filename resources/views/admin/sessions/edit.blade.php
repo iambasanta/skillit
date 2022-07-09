@@ -37,9 +37,9 @@
 
                         <!-- Seats -->
                         <div class="mt-4">
-                            <x-label for="seats" :value="__('Seats')" />
+                            <x-label for="seats" :value="__('Total Seats')" />
 
-                            <x-input id="seats" class="block w-full mt-1" type="number" name="seats" value="{{ $workshop->seats }}" required />
+                            <x-input id="seats" class="block w-full mt-1" type="number" name="seats" value="{{ $session->seats }}" required />
 
                             <x-error name="seats" />
                         </div>
@@ -51,6 +51,15 @@
                             <x-datepicker name="date" value="{{ $session->date }}"/>
 
                             <x-error name="date" />
+                        </div>
+
+                        <!-- Event Days -->
+                        <div class="mt-4">
+                            <x-label for="duration" :value="__('Event Duration')" />
+
+                            <x-input id="duration" class="block w-full mt-1" type="number" name="duration" value="{{ $session->duration }}" required />
+
+                            <x-error name="duration" />
                         </div>
 
                         <!-- Time -->
