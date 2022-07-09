@@ -18,6 +18,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'workshop_id' => rand(1,5),
+            'session_id' => rand(1,5),
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
             'phone' => fake()->phoneNumber(),

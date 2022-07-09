@@ -31,4 +31,8 @@ class Session extends Model
             get: fn($value) => Carbon::parse($value)->format('H:i A'),
         );
     }
+
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

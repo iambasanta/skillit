@@ -18,6 +18,8 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
+        'workshop_id',
+        'session_id',
         'name',
         'email',
         'phone',
@@ -45,4 +47,12 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function workshop(){
+        return $this->belongsTo(Workshop::class);
+    }
+
+    public function session(){
+        return $this->belongsTo(Session::class);
+    }
 }
