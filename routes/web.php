@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\AdminDashobardController;
 use App\Http\Controllers\Admin\AdminSessionController;
 use App\Http\Controllers\Admin\AdminWorkshopController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\WorkshopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,13 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::group(['middleware'=>['auth','verified']],function(){
+    Route::get('/workshops',[WorkshopController::class,'index'])->name('workshops');
+
+    Route::get('/sessions',[SessionController::class,'index'])->name('sessions');
+});
+
 
 Route::get('user/profile', [ProfileController::class, 'show'])->name('user.profile');
 Route::patch('user/profile', [ProfileController::class, 'update'])->name('user.update');
