@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('facilitator');
             $table->text('description');
             $table->integer('seats');
-            $table->string('date');
-            $table->string('time');
+            $table->date('date');
+            $table->time('time');
             $table->timestamps();
         });
     }
