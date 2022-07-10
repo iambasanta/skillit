@@ -22,7 +22,8 @@ class SessionFactory extends Factory
             'facilitator'=>fake()->name(),
             'seats' => rand(10,25),
             'date'=>fake()->date(),
-            'time'=>fake()->time()
+            'time'=>fake()->time(),
+            'duration' => rand(1,2),
         ];
     }
 }
