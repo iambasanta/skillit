@@ -68,14 +68,12 @@
                 <x-input id="password_confirmation" class="block w-full mt-1" type="password" name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+            <div class="flex items-center justify-end mt-4 space-x-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 " href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
+                <x-button.blue>Register</x-button.blue>
             </div>
         </form>
     </x-auth-card>

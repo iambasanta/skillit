@@ -88,10 +88,12 @@
                             <x-error name="password_confirmation" />
                         </div>
 
-                        <div class="flex items-center justify-end mt-4">
-                            <x-button class="ml-4">
-                                {{ __('Update') }}
-                            </x-button>
+                        <div class="flex items-center justify-between mt-4">
+                            <x-button.white>
+                                <a href="{{ route('dashboard') }}" >Cancel</a>
+                            </x-button.white>
+
+                            <x-button.blue>Update</x-button.blue>
                         </div>
                     </form>
                 </div>
