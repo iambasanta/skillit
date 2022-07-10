@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WorkshopController extends Controller
 {
     public function index(){
-        $workshops = Workshop::latest()->get();
+        $workshops = Workshop::with('users')->latest()->get();
 
         return view('workshops',compact('workshops'));
     }
