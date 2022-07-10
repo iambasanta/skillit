@@ -25,14 +25,16 @@
                 </a>
 
                 <!--Session Cards-->
-                <a href="session.html"><div class="flex p-6 rounded-md h-280 w-700 lg:hover:-translate-y-2">
+                <a href="{{ route('sessions') }}">
+                    <div class="flex p-6 rounded-md h-280 w-700 lg:hover:-translate-y-2">
                     <div class="max-h-full w-350 rounded-l-xl bg-orange-background">
                         <img src="{{ asset('images/vector_session.png') }}" alt="" class="h-full w-full rounded-l-2xl">
                     </div>
                     <div class="rounded-r-xl flex justify-center items-center text-2xl px-10 text-white font-bold bg-orange-background" >
                         <p>Sessions</p>
                     </div>
-                </div></a>
+                    </div>
+                </a>
 
             </div>
         </main>
