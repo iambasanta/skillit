@@ -74,10 +74,18 @@
                                     </div>
 
                                     <div class="mt-4 text-center">
+
                                         @if(auth()->user()->session?->id === $session->id)
                                         <button class="px-6 py-3 text-sm font-bold text-white rounded-full bg-orange-background ">
                                             Registered
                                         </button>
+                                        @else
+
+                                        @if($session->seats == $session->users->count())
+                                        <button class="px-6 py-3 text-sm font-bold text-gray-500 rounded-full bg-gray-200 ">
+                                            Register
+                                        </button>
+
                                         @else
 
                                         <form action="{{ route('sessions.register',$session->id) }}" method="POST">
@@ -89,6 +97,7 @@
                                                 Register
                                             </button>
                                         </form>
+                                        @endif
 
                                         @endif
 

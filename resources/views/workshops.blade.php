@@ -80,6 +80,13 @@
                                         </button>
                                         @else
 
+                                        @if($workshop->seats == $workshop->users->count())
+                                        <button class="px-6 py-3 text-sm font-bold text-gray-500 rounded-full bg-gray-200 ">
+                                            Register
+                                        </button>
+
+                                        @else
+
                                         <form action="{{ route('workshops.register',$workshop->id) }}" method="POST">
                                             @csrf
 
@@ -87,6 +94,7 @@
 
                                             <x-button.blue>Register</x-button.blue>
                                         </form>
+                                        @endif
 
                                         @endif
 
