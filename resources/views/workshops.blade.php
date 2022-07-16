@@ -36,7 +36,7 @@
                         <div class="px-5 py-6 space-y-6">
 
                             <div class="">
-                                <h4 class="font-bold text-gray-700"> Speaker : {{ $workshop->facilitator }}</h4>
+                                <h4 class="font-bold text-gray-700"> Facilitator : {{ $workshop->facilitator }}</h4>
                             </div>
 
                             <div class="text-sm text-gray-500 text-left">
