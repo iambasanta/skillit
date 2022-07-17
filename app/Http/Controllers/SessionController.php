@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {
     public function index(){
-        $sessions = Session::with('users')->latest()->get();
+        $sessions = Session::with('users')->orderBy('date')->get();
 
         return view('sessions',compact('sessions'));
     }
