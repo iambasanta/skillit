@@ -7,6 +7,7 @@ use App\Http\Requests\Session\StoreSessionRequest;
 use App\Http\Requests\Session\UpdateSessionRequest;
 use App\Models\Session;
 use Illuminate\Http\Request;
+use PDF;
 
 class AdminSessionController extends Controller
 {
@@ -29,6 +30,12 @@ class AdminSessionController extends Controller
         return redirect()->route('admin.sessions.index')->with('success', 'Session created successfully!');
     }
 
+    public function show(Session $session){
+        $registrants = $session->users()->paginate(10);
+
+        return view('admin.sessions.show',compact('session','registrants'));
+    }
+
     public function edit(Session $session)
     {
 
@@ -47,5 +54,13 @@ class AdminSessionController extends Controller
         $session->delete();
 
         return redirect()->route('admin.sessions.index')->with('success', 'Session deleted successfully!');
+    }
+
+    public function savePDF(Session $session){
+        $registrants = $session->users()->get();
+
+        $pdf = PDF::loadView('admin.sessions.registrants',compact('session','registrants'));
+
+        return $pdf->download($session->title.'.pdf');
     }
 }

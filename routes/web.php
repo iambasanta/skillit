@@ -55,9 +55,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/sessions', [AdminSessionController::class, 'index'])->name('sessions.index');
         Route::get('/sessions/create', [AdminSessionController::class, 'create'])->name('sessions.create');
         Route::post('/sessions', [AdminSessionController::class, 'store'])->name('sessions.store');
+        Route::get('/sessions/{session}', [AdminSessionController::class, 'show'])->name('sessions.show');
         Route::get('/sessions/{session}/edit', [AdminSessionController::class, 'edit'])->name('sessions.edit');
         Route::patch('/sessions/{session}/edit', [AdminSessionController::class, 'update'])->name('sessions.update');
         Route::delete('/sessions/{session}/delete', [AdminSessionController::class, 'destroy'])->name('sessions.destroy');
+        Route::get('/sessions/{session}/registrants', [AdminSessionController::class, 'savePDF'])->name('sessions.registrants.download');
 
         Route::get('/registrants', [AdminDashobardController::class, 'savePDF'])->name('registrants.download');
     });
