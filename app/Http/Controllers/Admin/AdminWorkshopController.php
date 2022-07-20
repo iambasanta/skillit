@@ -7,6 +7,7 @@ use App\Http\Requests\Workshop\StoreWorkshopRequest;
 use App\Http\Requests\Workshop\UpdateWorkshopRequest;
 use App\Models\Workshop;
 use Illuminate\Http\Request;
+use PDF;
 
 class AdminWorkshopController extends Controller
 {
@@ -29,6 +30,12 @@ class AdminWorkshopController extends Controller
         return redirect()->route('admin.workshops.index')->with('success', 'Workshop created successfully!');
     }
 
+    public function show(Workshop $workshop){
+        $registrants = $workshop->users()->paginate(10);
+
+        return view('admin.workshops.show',compact('workshop','registrants'));
+    }
+
     public function edit(Workshop $workshop)
     {
 
@@ -47,5 +54,13 @@ class AdminWorkshopController extends Controller
         $workshop->delete();
 
         return redirect()->route('admin.workshops.index')->with('success', 'Workshop deleted successfully!');
+    }
+
+    public function savePDF(Workshop $workshop){
+        $registrants = $workshop->users()->get();
+
+        $pdf = PDF::loadView('admin.workshops.registrants',compact('workshop','registrants'));
+
+        return $pdf->download($workshop->title.'.pdf');
     }
 }

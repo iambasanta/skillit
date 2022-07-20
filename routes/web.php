@@ -48,9 +48,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/workshops', [AdminWorkshopController::class, 'index'])->name('workshops.index');
         Route::get('/workshops/create', [AdminWorkshopController::class, 'create'])->name('workshops.create');
         Route::post('/workshops', [AdminWorkshopController::class, 'store'])->name('workshops.store');
+        Route::get('/workshops/{workshop}', [AdminWorkshopController::class, 'show'])->name('workshops.show');
         Route::get('/workshops/{workshop}/edit', [AdminWorkshopController::class, 'edit'])->name('workshops.edit');
         Route::patch('/workshops/{workshop}/edit', [AdminWorkshopController::class, 'update'])->name('workshops.update');
         Route::delete('/workshops/{workshop}/delete', [AdminWorkshopController::class, 'destroy'])->name('workshops.destroy');
+        Route::get('/workshops/{workshop}/registrants', [AdminWorkshopController::class, 'savePDF'])->name('workshops.registrants.download');
 
         Route::get('/sessions', [AdminSessionController::class, 'index'])->name('sessions.index');
         Route::get('/sessions/create', [AdminSessionController::class, 'create'])->name('sessions.create');
