@@ -54,7 +54,7 @@
 
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
-                                            {{ $workshop->seats }}
+                                            {{ $workshop->users->count()}}/{{ $workshop->seats }}
                                         </span>
                                     </td>
 
