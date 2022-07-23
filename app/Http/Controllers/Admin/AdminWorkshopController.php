@@ -31,7 +31,7 @@ class AdminWorkshopController extends Controller
     }
 
     public function show(Workshop $workshop){
-        $registrants = $workshop->users()->paginate(10);
+        $registrants = $workshop->users()->orderBy('name')->paginate(10);
 
         return view('admin.workshops.show',compact('workshop','registrants'));
     }
@@ -57,7 +57,7 @@ class AdminWorkshopController extends Controller
     }
 
     public function savePDF(Workshop $workshop){
-        $registrants = $workshop->users()->get();
+        $registrants = $workshop->users()->orderBy('name')->get();
 
         $pdf = PDF::loadView('admin.workshops.registrants',compact('workshop','registrants'));
 

@@ -31,7 +31,7 @@ class AdminSessionController extends Controller
     }
 
     public function show(Session $session){
-        $registrants = $session->users()->paginate(10);
+        $registrants = $session->users()->orderBy('name')->paginate(10);
 
         return view('admin.sessions.show',compact('session','registrants'));
     }
@@ -57,7 +57,7 @@ class AdminSessionController extends Controller
     }
 
     public function savePDF(Session $session){
-        $registrants = $session->users()->get();
+        $registrants = $session->users()->orderBy('name')->get();
 
         $pdf = PDF::loadView('admin.sessions.registrants',compact('session','registrants'));
 
