@@ -12,14 +12,14 @@ class AdminDashobardController extends Controller
 
     public function index()
     {
-        $users = User::orderBy('id')->paginate(10);
+        $users = User::orderBy('name')->with('workshop','session')->paginate(10);
 
         return view('admin.index', compact('users'));
     }
 
     public function savePDF()
     {
-        $registrants = User::orderBy('id')->get();
+        $registrants = User::orderBy('name')->get();
 
         $pdf = PDF::loadView('admin.registrants', compact('registrants'));
 

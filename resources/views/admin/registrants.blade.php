@@ -33,7 +33,6 @@
     <table class="registrants">
         <thead>
             <tr>
-                <th>SN</th>
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>College/Institute</th>
@@ -44,7 +43,6 @@
         <tbody>
             @foreach($registrants as $registrant)
             <tr>
-                <td>{{ $registrant->id }}</td>
                 <td>{{ $registrant->name }}</td>
                 <td>{{ $registrant->email }}</td>
                 <td>{{ $registrant->institute }}</td>

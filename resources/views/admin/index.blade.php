@@ -33,6 +33,9 @@
                                     <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                         Year/ Semester
                                     </th>
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                        W/S
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
@@ -66,6 +69,13 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
                                             {{ $user->level }}
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
+                                            @if($user->workshop?->count()) <span>Y</span> @else  <span>N</span> @endif
+                                            /
+                                            @if($user->session?->count()) <span>Y</span> @else  <span>N</span> @endif
                                         </span>
                                     </td>
                                 </tr>
