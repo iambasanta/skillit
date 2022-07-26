@@ -25,7 +25,7 @@
                                         Phone
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                       Collete/ Institute 
+                                        Collete/ Institute
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                         Faculty
@@ -43,7 +43,13 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
+                                            @if($user->workshop?->date === $user->session?->date)
+                                            <span class="bg-yellow-100 rounded-lg px-2">
+                                                {{ $user->name }}
+                                            </span>
+                                            @else
                                             {{ $user->name }}
+                                            @endif
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
@@ -73,9 +79,9 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
-                                            @if($user->workshop?->count()) <span>Y</span> @else  <span>N</span> @endif
+                                            @if($user->workshop?->count()) <span>Y</span> @else <span>N</span> @endif
                                             /
-                                            @if($user->session?->count()) <span>Y</span> @else  <span>N</span> @endif
+                                            @if($user->session?->count()) <span>Y</span> @else <span>N</span> @endif
                                         </span>
                                     </td>
                                 </tr>
