@@ -43,13 +43,7 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
-                                            @if($user->workshop?->date === $user->session?->date)
-                                            <span class="bg-yellow-100 rounded-lg px-2">
-                                                {{ $user->name }}
-                                            </span>
-                                            @else
                                             {{ $user->name }}
-                                            @endif
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
