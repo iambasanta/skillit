@@ -40,6 +40,7 @@
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Faculty</th>
                 <th>Signature</th>
             </tr>
         </thead>
@@ -49,6 +50,7 @@
                 <td>{{ $registrant->name }}</td>
                 <td>{{ $registrant->email }}</td>
                 <td>{{ $registrant->phone }}</td>
+                <td>{{ $registrant->faculty }}</td>
                 <td></td>
             </tr>
             @endforeach

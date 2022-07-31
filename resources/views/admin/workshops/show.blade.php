@@ -34,6 +34,10 @@
                                     <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                         College/Institute
                                     </th>
+
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                        Faculty
+                                    </th>
                                 </tr>
                             </thead>
 
@@ -61,6 +65,12 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
                                             {{ $registrant->institute }}
+                                        </span>
+                                    </td>
+
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex px-2 text-xs font-semibold leading-5 ">
+                                            {{ $registrant->faculty }}
                                         </span>
                                     </td>
                                 </tr>
